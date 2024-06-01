@@ -1,10 +1,10 @@
 # GSP619
 ## Run in cloudshell
-### Get ZONE from TASK 1 > `Create vm instances in network` > Step 2 us-central1-f
+### Get ZONE from TASK 1 > `Create vm instances in network` > Step 1 
 ```cmd
 export ZONE=
 ```
-### Get ZONE from TASK 1 > `Create vm instances in network` > Step 1 europe-west1-c
+### Get ZONE from TASK 1 > `Create vm instances in network` > Step 2
 ```cmd
 export ZONE1=
 ```
