@@ -6,15 +6,15 @@ export ZONE=
 ```
 ### Get ZONE from TASK 1 > `Create vm instances in network` > Step 1 europe-west1-c
 ```cmd
-export ZONE2=
+export ZONE1=
 ```
 ### Get ZONE from TASK 2 > `Create a test instance in network` > Step 1
 ```cmd
-export ZONE1=
+export ZONE2=
 ```
 ```cmd
 export REGION1=${ZONE::-2}
-export REGION2=${ZONE2::-2}
+export REGION2=${ZONE1::-2}
 gcloud compute networks create vpc-demo --subnet-mode=custom
 gcloud beta compute networks subnets create vpc-demo-subnet1 \
 --network=vpc-demo --range=10.1.1.0/24 --region=$REGION1
@@ -28,7 +28,7 @@ gcloud compute firewall-rules create vpc-demo-allow-ssh-icmp \
 --network=vpc-demo \
 --allow=tcp:22,icmp
 gcloud compute instances create vpc-demo-instance1 --zone=$ZONE --subnet=vpc-demo-subnet1
-gcloud compute instances create vpc-demo-instance2 --zone=$ZONE2 --subnet=vpc-demo-subnet2
+gcloud compute instances create vpc-demo-instance2 --zone=$ZONE1 --subnet=vpc-demo-subnet2
 gcloud compute networks create on-prem --subnet-mode=custom
 gcloud beta compute networks subnets create on-prem-subnet1 \
 --network=on-prem --range=192.168.1.0/24 --region=$REGION1
@@ -39,7 +39,7 @@ gcloud compute firewall-rules create on-prem-allow-internal \
 gcloud compute firewall-rules create on-prem-allow-ssh-icmp \
 --network=on-prem \
 --allow=tcp:22,icmp
-gcloud compute instances create on-prem-instance1 --zone=$ZONE1 --subnet=on-prem-subnet1
+gcloud compute instances create on-prem-instance1 --zone=$ZONE2 --subnet=on-prem-subnet1
 gcloud beta compute vpn-gateways create vpc-demo-vpn-gw1 --network=vpc-demo --region=$REGION1
 gcloud beta compute vpn-gateways create on-prem-vpn-gw1 --network=on-prem --region=$REGION1
 gcloud compute routers create vpc-demo-router1 \
