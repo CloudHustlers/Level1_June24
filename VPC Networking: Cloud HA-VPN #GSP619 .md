@@ -4,13 +4,13 @@
 ```cmd
 export ZONE=
 ```
-### Get ZONE from TASK 2 > `Create a test instance in network` > Step 1
-```cmd
-export ZONE1=
-```
 ### Get ZONE from TASK 1 > `Create vm instances in network` > Step 1 europe-west1-c
 ```cmd
 export ZONE2=
+```
+### Get ZONE from TASK 2 > `Create a test instance in network` > Step 1
+```cmd
+export ZONE1=
 ```
 ```cmd
 export REGION1=${ZONE::-2}
