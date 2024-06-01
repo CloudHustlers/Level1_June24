@@ -48,7 +48,7 @@ gcloud compute target-pools create www-pool \
 --region=$REGION \
 --http-health-check basic-check
 gcloud compute target-pools add-instances www-pool \
---instances web1,web2,web3 --zone=$ZONE
+--instances=web1,web2,web3 --instances-zone=$ZONE
 gcloud compute forwarding-rules create www-rule \
 --region=$REGION \
 --ports 80 \
