@@ -1,4 +1,5 @@
 # GSP210
+## Run in cloudshell
 ```cmd
 export ZONE1=
 ```
