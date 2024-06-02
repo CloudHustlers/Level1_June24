@@ -43,7 +43,7 @@ while true; do
 done
 echo -e "\033[1;34mscc-export-bucket-$DEVSHELL_PROJECT_ID\033[0m"
 ```
-> Copy Bucket Name From Last line of terminal
+> Copy Bucket Name From Last line of terminal Blue in color
 
 > Cloud storage > Create > name `paste the name` > continue
 
