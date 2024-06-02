@@ -41,7 +41,7 @@ while true; do
         sleep 10
     fi
 done
-echo "BUCKET_NAME=scc-export-bucket-$DEVSHELL_PROJECT_ID"
+echo -e "\033[1;34mscc-export-bucket-$DEVSHELL_PROJECT_ID\033[0m"
 ```
 > Copy Bucket Name From Last line of terminal
 
@@ -51,16 +51,33 @@ echo "BUCKET_NAME=scc-export-bucket-$DEVSHELL_PROJECT_ID"
 
 > Search `Security Command Center` > Overview > Findings
 
-> export > cloud storage 
+> export > cloud storage > Select the bucket > Inside the bucket set file name to `findings.jsonl`
 
 >Project name `your gcp id`
 
->path `from the table in lab` > Format `JSONL` > EXPORT
+>path `from the table in lab` > Format `JSONL` > Time Range `All Time` > EXPORT
 
-> BigQuery > + ADD > Google cloud storage 
+> BigQuery > + ADD > Google cloud storage
+
+> Select `findings.jsonl` file from the bucket
 
 >path `from the table in lab` > File format `JSONL`
 
->Dataset	`continuous_export_dataset` > Table	`old_findings` > check 	Auto detect > Create
+>Dataset `continuous_export_dataset` > Table `old_findings`
 
-### 2nd Check will take Approx 8-10 mins 
+> Enable `Edit As Text`
+
+```cmd
+[   
+  {
+    "mode": "NULLABLE",
+    "name": "resource",
+    "type": "JSON"
+  },   
+  {
+    "mode": "NULLABLE",
+    "name": "finding",
+    "type": "JSON"
+  }
+]
+```
